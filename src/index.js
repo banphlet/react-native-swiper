@@ -398,7 +398,10 @@ export default class extends Component {
     const diff = offset[dir] - this.internals.offset[dir]
     const step = dir === 'x' ? state.width : state.height
     let loopJump = false
-
+    if(offset === undefined || this.internals.offset === undefined){
+     return;
+    }
+    
     // Do nothing if offset no change.
     if (!diff) return
 
